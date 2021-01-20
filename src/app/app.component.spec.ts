@@ -28,4 +28,16 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('everis-angular-testing app is running!');
   });
+
+  it('should exist a welcome toolbar', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.toolbar').textContent).toContain('Welcome');
+  });
+
+  it('should have found 3 words', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.words.length).toEqual(3);
+  });
 });

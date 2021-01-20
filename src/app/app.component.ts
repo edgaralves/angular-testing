@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WordsService } from './words.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'everis-angular-testing';
+
+  words: string[] = [];
+
+  constructor(private readonly wordsService: WordsService) {
+    this.words = this.wordsService.words;
+  }
 }
